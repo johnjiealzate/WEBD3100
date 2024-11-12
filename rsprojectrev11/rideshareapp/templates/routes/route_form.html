@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="addform">
+  
+  <!-- Flexbox container -->
+  <div class="container">
+
+    <!-- Left Box (form section) -->
+    <div class="col-12" id="hero-content_addform">
+      <h3 class="hero-title_addform">{{ form.instance.pk|yesno:"Edit Route,New route" }}</h3>
+      <h1 class="hero-subtitle_addform" style="text-align: center;">Add your preferred route.</h1>
+
+      <form method="post">
+          {% csrf_token %}
+          <div class="row" style="display: flex; justify-content: center;">
+              {% for field in form %}
+                  <div class="col-12 mb-3" style="width: 100%; max-width: 500px; padding: 0px; justify-content: center">
+                      <label for="{{ field.id_for_label }}" class="form-label" style="display: block; text-align: left; margin-bottom: 0.5rem;">
+                          {{ field.label }}
+                      </label>
+                      <div class="input-group" style="width: 100%;">
+                          {{ field }}
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+
+          <div class="row" style="display: flex; justify-content: center;">
+              <div class="col-6 text-center">
+                <button type="submit" class="add_new_route_btn" style="background-color: #1B4159; border: #1B4159; color: white; border-radius: 30px; margin-top: 30px; padding: 15px 40px;" id="submit-btn">
+                  Save route
+                </button>
+              </div>
+          </div>
+      </form>
+    </div>
+
+    {% load static %}
+    <!-- Right Box (This box will move below on smaller screens) -->
+    <div class="col-4 col-md-3" style="background-color: #fff; padding: 20px; display: flex; flex-direction: column; width: 100%; max-width: 600px;">
+      <!-- Right box content -->
+      <div>
+        <h5>Route preview:</h5>
+      </div>
+      <img src="{% static 'images/search.png' %}" alt="NRoutelogo" style="width: 100%; max-width: 300px; height: auto; padding-top: 0px;">
+      <div>
+        <a class="navbar-brand" href="">
+          <img src="{% static 'images/map.png' %}" alt="Map preview" style="width: 100%; max-width: 510px; height: auto; padding-top: 10px;">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.navbar-toggler').click(function(){
+            $('#addform').toggleClass('menu-open');
+        });
+    });
+</script>
+
+<style>
+  /* Hover effect for submit button */
+  .submit:hover {
+    background-color: #333; /* Dark gray color on hover */
+    border: #333; /* Optional: change border color as well */
+  }
+
+  /* Optional: you can add some margin or padding for smaller screens if you want */
+  @media (max-width: 768px) {
+    .col-md-6 {
+      margin-top: 20px;
+    }
+
+    .col-12 {
+      max-width: 300px;
+    }
+
+    .add_new_route_btn {
+      padding: 15px 20px;
+    }
+  }
+
+  h5 {
+    color: #1B4159;
+    text-size: 2rem;
+  }
+
+  /* Change label color to #1B4159 */
+  label.form-label {
+    color: #1B4159;
+  }
+
+  /* Style input fields */
+  .input-group input,
+  .input-group select,
+  .input-group textarea {
+    height: 35px;           /* Set height */
+    border-radius: 7px;     /* Set corner radius */
+    padding: 0 15px;        /* Add padding inside the input for better alignment */
+    font-size: 16px;        /* Optional: adjust font size */
+    border: 1px solid #ccc; /* Add 1px gray border */
+  }
+
+</style>
+
+{% endblock %}
