@@ -105,20 +105,20 @@
 </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-      $(document).ready(function(){
-        $('.navbar-toggler').click(function(){
-          $('#hero').toggleClass('menu-open');
-        });
-      });
-    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.navbar-toggler').click(function(){
+      $('#hero').toggleClass('menu-open');
+    });
+  });
+</script>
 
-    <script>
-      document.getElementById('checkRoutesBtn').onclick = function() {
-        window.location.href = "{% url 'route_list' %}";
-      }
-    </script>
+<script>
+  document.getElementById('checkRoutesBtn').onclick = function() {
+    window.location.href = "{% url 'route_list' %}";
+  }
+</script>
 
 </body>
 </html>
