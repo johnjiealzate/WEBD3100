@@ -91,7 +91,7 @@ html, body {
  .navbar-brand {
     font-size: x-large;
  }
- .route_list {
+ .route_list_btn {
     border-radius: 30px;
     border: none;
     padding: 15px 50px;
@@ -105,7 +105,7 @@ html, body {
     font-weight: 100px;
  }
 
- .route_list:hover {
+ .route_list_btn:hover {
    background-color: #333;  /* Optional: Change background color on hover */
 }
 
