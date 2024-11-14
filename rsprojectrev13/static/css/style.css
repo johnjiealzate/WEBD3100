@@ -677,3 +677,52 @@ label.form-label {
 .input-group {
    width: 100%;
 }
+
+
+/* Modal (Delete Confirmation) --> */
+.modal-dialog {
+   max-width: 500px;
+   margin: 0; position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.modal-header {
+   background-color: #1B4159;
+   color: white;
+}
+
+.btn-close {
+   background-color: #fff;
+   color: #1B4159;
+}
+
+#deleteRouteName {
+   font-weight: bold;
+   color: #1B4159;
+}
+
+#deleteRouteLongName {
+   font-style: bold;
+   color: #1B4159;
+}
+
+#deleteMessage {
+   font-weight: bold;
+}
+
+.modal-footer {
+   padding: 15px;
+   justify-content: center;
+}
+
+.btn-danger {
+   border-radius: 30px;
+   padding: 10px 20px;
+}
+
+.btn-secondary {
+   border-radius: 30px;
+   padding: 10px 20px;
+}

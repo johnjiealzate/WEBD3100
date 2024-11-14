@@ -8,7 +8,7 @@
 
       <!-- Responsive table -->
       <div class="table-responsive">
-        <table class="table table-striped .table-bordered-custom" id="table">
+        <table class="table table-striped table-bordered-custom" id="table">
           <thead>
             <tr>
               <th>Route Short Name</th>
@@ -27,8 +27,13 @@
 
                   <!-- Delete Button (Gray, with hover effect) -->
                   <a href="#" 
-                     class="btn btn-sm" id="delete_btn"
-                     onclick="setDeleteData('{{ route.route_short_name }}', '{{ route.route_long_name }}', '{% url 'route_delete' route.route_id %}'); showModal();">
+                     class="btn btn-sm" id="delete_btn" 
+                     onclick="setDeleteData(
+                              '{{ route.route_short_name }}',
+                              '{{ route.route_long_name }}',
+                              '{% url 'route_delete' route.route_id %}'
+                              );
+                              showModal();">
                      Delete
                   </a>
                 </td>
@@ -45,23 +50,23 @@
 
   <!-- Modal (Delete Confirmation) -->
   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
-    <div class="modal-dialog" style="max-width: 500px; margin: 0; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+    <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header" style="background-color: #1B4159; color: white;">
+        <div class="modal-header">
           <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color: #fff; color: #1B4159;"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" style="padding: 20px;">
           <h5>Are you sure you want to delete the route:</h5>
-          <span>"</span><a id="deleteRouteName" style="font-weight: bold; color: #1B4159; "></a>
-          <a id="deleteRouteLongName" style="font-style: bold; color: #1B4159;"></a><span>"</span><span id="deleteRouteLongNameQuestion">?</span>
-          <a id="deleteMessage" style="font-weight: bold;"></a>
+          <span>"</span><a id="deleteRouteName"></a>
+          <a id="deleteRouteLongName"></a><span>"</span><span id="deleteRouteLongNameQuestion">?</span>
+          <a id="deleteMessage"></a>
         </div>
-        <div class="modal-footer" style="padding: 15px; justify-content: center;">
+        <div class="modal-footer">
           <form id="deleteForm" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-danger" style="border-radius: 30px; padding: 10px 20px;">Yes, delete</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close" style="border-radius: 30px; padding: 10px 20px;">Cancel</button>
+            <button type="submit" class="btn btn-danger">Yes, delete</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
           </form>
         </div>
       </div>
