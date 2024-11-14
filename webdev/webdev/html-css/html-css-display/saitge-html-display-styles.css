@@ -37,7 +37,7 @@ h1, h2 {
 /* Inline-block elements respect width and height, but flow like inline elements */
 .inline-block-example {
     display: inline-block;
-    width: 300px;
+    width: 900px;
     padding: 10px;
     background-color: #e76f51;
     color: white;

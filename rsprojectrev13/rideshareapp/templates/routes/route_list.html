@@ -1,12 +1,11 @@
 {% extends 'base.html' %}
-
 {% block content %}
   <section id="list">
     <div class="container col-8" id="hero-content_list">
       <h3 class="hero-title_list">Route list</h3>
       <h1 class="hero-subtitle_list">Take a look at available routes.</h1>
 
-      <!-- Responsive table -->
+      <!-- Responsive table - list of routes -->
       <div class="table-responsive">
         <table class="table table-striped table-bordered-custom" id="table">
           <thead>
@@ -52,11 +51,11 @@
   <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
+        <div class="modal-header" id="modal_header">
           <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" style="padding: 20px;">
+        <div class="modal-body">
           <h5>Are you sure you want to delete the route:</h5>
           <span>"</span><a id="deleteRouteName"></a>
           <a id="deleteRouteLongName"></a><span>"</span><span id="deleteRouteLongNameQuestion">?</span>
@@ -65,8 +64,8 @@
         <div class="modal-footer">
           <form id="deleteForm" method="POST">
             {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Yes, delete</button>
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+            <button type="submit" class="btn btn-danger" id="button_danger">Yes, delete</button>
+            <button type="button" class="btn btn-secondary" id="button_secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
           </form>
         </div>
       </div>

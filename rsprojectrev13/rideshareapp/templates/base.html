@@ -16,93 +16,94 @@
 </head>
 <body>
 
-    <!-- Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'base.html' %}">
-          <img src="{% static '/images/nroutelogo.png' %}" alt="NRoutelogo" style="width: 150px;">
-        </a>
-        <!-- Hamburger Button for Small Screens -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- Navigation Bar-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'base.html' %}">
+        <img src="{% static '/images/nroutelogo.png' %}" alt="NRoutelogo" style="width: 150px;">
+      </a>
+      <!-- Hamburger Button for Small Screens -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <!-- Collapsible Menu -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="{% url 'base.html' %}">Home</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="{% url 'route_list' %}">Route list</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="{% url 'route_create' %}">Add route</a>
-            </li>
-            <li class="nav-item mr-3">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
+      <!-- Collapsible Menu -->
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'base.html' %}">Home</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'route_list' %}">Route list</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'route_create' %}">Add route</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
 
-            <!-- Signup Button -->
-            <li class="nav-item">
-              <a class="btn btn-secondary" id="sign_up" href="">Sign Up</a>
-            </li>
-          </ul>
-        </div>
+          <!-- Signup Button -->
+          <li class="nav-item">
+            <a class="btn btn-secondary" id="sign_up" href="">Sign Up</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    {% block content %}
-    <!-- Main Content Section -->
-    <div class="main-content">
-      <section id="hero">
-        <div class="container" id="hero-content">         
-          <h2 class="hero-title">Your ride, your way. Let’s get you there!</h2> 
-          <h1 class="hero-subtitle">We're here to help you with your journey.</h1> 
-          <div class="row">
-            <div class="col-6">
-              <div id="form"><button type="button" class="route_list_btn" id="checkRoutesBtn">Check routes</button></div>                    
-            </div>
-            <div class="col-6"></div>
+  {% block content %}
+  <!-- Main Hero Section -->
+  <div class="main-content">
+    <section id="hero">
+      <div class="container" id="hero-content">         
+        <h2 class="hero-title">Your ride, your way. Let’s get you there!</h2> 
+        <h1 class="hero-subtitle">We're here to help you with your journey.</h1> 
+        <div class="row">
+          <div class="col-6">
+            <div id="form"><button type="button" class="route_list_btn" id="checkRoutesBtn">Check routes</button></div>                    
           </div>
+          <div class="col-6"></div>
         </div>
-      </section>
-    </div> <!-- End of .main-content -->
-    {% endblock %}
+      </div>
+    </section>
+  </div> <!-- End of .main-content -->
+  {% endblock %}
     
-<!-- Footer Section -->
-<footer class="footer" id="contact">
-  <!-- Footer Top (first 6 grids: copyright and legal links) -->
-  <div class="row">
-    <!-- Legal Information: First 6 columns -->
-    <div class="footer-item copyright col-6 d-flex flex-wrap justify-content-between">
-      <div><p> Copyright © 2024 Route Inc. All rights reserved.</p></div>
-      <div class="container-fluid" id="section2">
-        <a href="" class="privacy_policy">Privacy Policy</a> |
-        <a href="" class="use_of_cookies">Use of Cookies</a> |
-        <a href="" class="terms_of_use">Terms of Use</a>
-      </div>
-    </div>
+  <!-- Footer Section -->
+  <footer class="footer" id="contact">
+    <!-- Footer Top (first 6 grids: copyright and legal links) -->
+    <div class="row">
 
-    <!-- Social Media and Contact Info Section -->
-    <div class="footer_socials_contact col-6 d-flex flex-wrap justify-content-between">
-      <!-- Social Media Icons: First 2 columns -->
-      <div class="footer-item social-media col-6">
-          <a href="#" class="instagram"><img src="{% static 'images/instagram.png' %}" alt="Instagram" class="twitter"></a>
-          <a href="#" class="youtube"><img src="{% static 'images/youtube.png' %}" alt="YouTube" class="instagram"></a>
-          <a href="#" class="linkedin"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" class="facebook"></a>
-        <!-- Add social media links/icons here -->
+      <!-- Legal Information: First 6 columns -->
+      <div class="footer-item copyright col-6 d-flex flex-wrap justify-content-between">
+        <div><p> Copyright © 2024 Route Inc. All rights reserved.</p></div>
+        <div class="container-fluid" id="section2">
+          <a href="" class="privacy_policy">Privacy Policy</a> |
+          <a href="" class="use_of_cookies">Use of Cookies</a> |
+          <a href="" class="terms_of_use">Terms of Use</a>
+        </div>
       </div>
 
-      <!-- Contact Info: Second 2 columns -->
-      <div class="footer-item contact-info col-6">
-        <h4>Contact Us</h4>
-        <p>Email: <a href="mailto:contact-nsccride@nroute.com">contact-nsccride@nroute.com</a></p>
-        <p>Phone: 902-502-5555</p> <!-- Moved the phone number below the email -->
+      <!-- Social Media and Contact Info Section -->
+      <div class="footer_socials_contact col-6 d-flex flex-wrap justify-content-between">
+        <!-- Social Media Icons: First 2 columns -->
+        <div class="footer-item social-media col-6">
+            <a href="#" class="instagram"><img src="{% static 'images/instagram.png' %}" alt="Instagram" class="twitter"></a>
+            <a href="#" class="youtube"><img src="{% static 'images/youtube.png' %}" alt="YouTube" class="instagram"></a>
+            <a href="#" class="linkedin"><img src="{% static 'images/linkedin.png' %}" alt="LinkedIn" class="facebook"></a>
+          <!-- Add social media links/icons here -->
+        </div>
+
+        <!-- Contact Info: Second 2 columns -->
+        <div class="footer-item contact-info col-6">
+          <h4>Contact Us</h4>
+          <p>Email: <a href="mailto:contact-nsccride@nroute.com">contact-nsccride@nroute.com</a></p>
+          <p>Phone: 902-502-5555</p>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
