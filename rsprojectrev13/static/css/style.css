@@ -678,16 +678,7 @@ label.form-label {
    width: 100%;
 }
 
-
 /* Modal (Delete Confirmation) --> */
-.modal-dialog {
-   max-width: 500px;
-   margin: 0; position: fixed;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-}
-
 .modal-body {
    padding: 20px;
 }
