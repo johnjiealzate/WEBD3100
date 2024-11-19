@@ -9,7 +9,7 @@
     <!-- Left Box (form section) -->
     <div class="col-6" id="hero-content_addform">
       <h3 class="hero-title_addform">{{ form.instance.pk|yesno:"Edit Route,New route" }}</h3>
-      <h1 class="hero-subtitle_addform">Add your preferred route.</h1>
+      <h1 class="hero-subtitle_addform">Set route parameters.</h1>
 
       <form method="post">
           {% csrf_token %}
