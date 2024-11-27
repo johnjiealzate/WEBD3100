@@ -1,5 +1,5 @@
 html, body {
-   font-family: "Montserrat", sans-serif;
+   font-family: "Poppins", sans-serif;
    overflow-x: hidden;
    width: 100%;
    margin: 0;
@@ -78,12 +78,14 @@ html, body {
     
  }
  .hero-title {
-    font-size: 5.5rem;
+   font-family: "Poppins", sans-serif;
+    font-size: 5.6rem;
     font-weight: 400;
     margin-bottom: 0;
     justify-items: center;
  }
  .hero-subtitle {
+    font-family: "Poppins", sans-serif;
     font-size: 1.6rem;
     font-weight: 100px;
     margin-top: 0.5rem;
@@ -110,17 +112,29 @@ html, body {
 
 /* Make the button more responsive */
 @media (max-width: 1200px) {
-   .route_list {
+   .route_list_btn {
        font-size: 1.3rem;
        padding: 15px 50px;
    }
+   .hero-title {
+      font-size: 4.0rem;
+  }
+  .hero-subtitle {
+     font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 576px) {
-   .route_list {
-       font-size: 1.2rem;
+   .route_list_btn {
+       font-size: 1.0rem;
        padding: 15px 30px;
        width: 90%;
+   }
+   .hero-title {
+       font-size: 4.2rem;
+   }
+   .hero-subtitle {
+      font-size: 1.2rem;
    }
 }
  
@@ -278,7 +292,7 @@ border-color: #333 !important;
 
  #hero-content_addform {
     position: relative;
-    font-family: "Montserrat", sans-serif;
+    font-family: "Poppins";
     color: white;
     text-align: center;
     margin: 0.625rem;
