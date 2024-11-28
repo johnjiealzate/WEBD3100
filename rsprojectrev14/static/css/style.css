@@ -1,13 +1,16 @@
 html, body {
-   font-family: "Montserrat", sans-serif;
-   width: 100%;
+   font-family: "Poppins", sans-serif;
+   overflow-x: hidden;  /* Prevent horizontal overflow */
+   width: 100%;          /* Ensure full width */
+   margin: 0;
+   padding: 0;
 }
 
 .navbar {
-    height: 70px;
+    height: 70px; /* Set the height you want */
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: center; /* Vertically center the content */
+    justify-content: space-between; /* Space out the items */
     margin-left: auto;
     margin-right: auto;
 }
@@ -25,13 +28,17 @@ html, body {
 }
 
 .navbar .btn-primary .btn-secondary {
-   margin-right: 100px;
+   margin-right: 100px; /* Adjust space between buttons */
  }
 
 #sign_up {
    background-color: #333;
    color: #fff;
    border: none;
+ }
+
+ .navbar .btn:last-child {
+   margin-right: 0; /* Remove margin from the last button */
  }
 
 #hero {
@@ -41,16 +48,19 @@ html, body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    transition: margin-top 0.3s ease;
-    padding-left: 25px;
+    transition: margin-top 0.3s ease; /* Smooth transition */
+    padding-left: 25px;          /* Optional: Add some space from the left edge */
 }
 
 #hero.menu-open {
-   margin-top: 200px;
+   margin-top: 200px; /* Adjust this value based on your navbar height */
 }
 
  #hero::before {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: url('/static/images/travel.jpg');
@@ -59,10 +69,8 @@ html, body {
     background-position: center center;
     filter: brightness(60%);
  }
- 
  #hero-content {
     position: relative;
-    font-family: "Montserrat", sans-serif;
     color: white;
     text-align: start;
     margin: 0.625rem;
@@ -70,12 +78,14 @@ html, body {
     
  }
  .hero-title {
+   font-family: "Poppins", sans-serif;
     font-size: 5.5rem;
     font-weight: 400;
     margin-bottom: 0;
     justify-items: center;
  }
  .hero-subtitle {
+   font-family: "Poppins", sans-serif;
     font-size: 1.6rem;
     font-weight: 100px;
     margin-top: 0.5rem;
@@ -87,7 +97,6 @@ html, body {
     border-radius: 30px;
     border: none;
     padding: 15px 50px;
-    font-family: "Montserrat", sans-serif;
     display: inline-block;
     margin-top: 20px;
     font-size: 1.3rem;
@@ -97,26 +106,30 @@ html, body {
     font-weight: 100px;
  }
 
- .route_list_btn:hover {
-   background-color: #333;
+ .route_list:hover {
+   background-color: #333;  /* Optional: Change background color on hover */
 }
 
 /* Make the button more responsive */
 @media (max-width: 1200px) {
    .route_list {
-       font-size: 1.3rem;
+       font-size: 1.3rem;          /* Slightly larger font on larger tablets */
        padding: 15px 50px;
    }
 }
 
 @media (max-width: 576px) {
    .route_list {
-       font-size: 1.2rem;
-       padding: 15px 30px;
-       width: 90%;
+       font-size: 1.2rem;          /* Smaller font for very small screens */
+       padding: 15px 30px;          /* Even smaller padding */
+       width: 90%;                  /* Make button width 90% of the screen */
    }
 }
  
+ h2 {
+    font-size: xx-large;
+ }
+
  #list {
     position: relative;
     width: 100vw;
@@ -124,15 +137,18 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: margin-top 0.3s ease;
+    transition: margin-top 0.3s ease; /* Smooth transition */
  }
 
 #list.menu-open {
-   margin-top: 200px;
+   margin-top: 200px; /* Adjust this value based on your navbar height */
 }
 
  #list::before {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: url('/static/images/travel.jpg');
@@ -143,7 +159,6 @@ html, body {
  }
  #hero-content_list {
     position: relative;
-    font-family: "Montserrat", sans-serif;
     color: white;
     text-align: center;
     margin: 0.625rem;
@@ -230,15 +245,18 @@ border-color: #333 !important;
     justify-content: center;
     align-items: center;
     width: 100%;
-    transition: margin-top 0.3s ease;
+    transition: margin-top 0.3s ease; /* Smooth transition */
  }
 
  #addform.menu-open {
-   margin-top: 200px;
+   margin-top: 200px; /* Adjust this value based on your navbar height */
 }
 
  #addform::before {
+    content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-image: url('/static/images/travel.jpg');
@@ -246,12 +264,12 @@ border-color: #333 !important;
     background-size: cover;
     background-position: center center;
     filter: brightness(60%);
-    z-index: -1;
+    z-index: -1; /* Ensure the background stays behind the content */
  }
 
  #addform .container {
    position: relative;
-   z-index: 1;
+   z-index: 1; /* Content stays in front of background */
 }
 
 #route_form_container {
@@ -266,7 +284,6 @@ border-color: #333 !important;
 
  #hero-content_addform {
     position: relative;
-    font-family: "Montserrat", sans-serif;
     color: white;
     text-align: center;
     margin: 0.625rem;
@@ -323,7 +340,6 @@ border-color: #333 !important;
     border-radius: 10px;
     border: none;
     padding: 10px;
-    font-family: "Montserrat", sans-serif;
     display: inline-block;
     margin-top: 0.3rem;
     font-size: 1rem;
@@ -348,8 +364,8 @@ border-color: #333 !important;
 
 /* Hover effect for add_new_route_btn */
 .save_route_btn:hover {
-   background-color: #333 !important;
-   border: #333 !important;
+   background-color: #333 !important; /* Dark gray color on hover */
+   border: #333 !important; /* Optional: change border color as well */
 }
 
 #right_box_div {
@@ -379,11 +395,11 @@ border-color: #333 !important;
 .input-group input,
 .input-group select,
 .input-group textarea {
-   height: 35px;
-   border-radius: 7px;
-   padding: 0 15px;
-   font-size: 16px;
-   border: 1px solid #ccc;
+   height: 35px;           /* Set height */
+   border-radius: 7px;     /* Set corner radius */
+   padding: 0 15px;        /* Add padding inside the input for better alignment */
+   font-size: 16px;        /* Optional: adjust font size */
+   border: 1px solid #ccc; /* Add 1px gray border */
 }
 
 #save_route_btn {
@@ -401,7 +417,10 @@ label.form-label {
 }
 
  #delete::before {
+   content: "";
    position: absolute;
+   top: 0;
+   left: 0;
    width: 100%;
    height: 100%;
    background-image: url('/static/images/travel.jpg');
@@ -412,7 +431,6 @@ label.form-label {
 }
 #hero-content_delete {
    position: relative;
-   font-family: "Montserrat", sans-serif;
    color: white;
    text-align: center;
    margin: 0.625rem;
@@ -434,7 +452,7 @@ label.form-label {
    left: 0;
    width: 100%;
    color: white;
-   z-index: 9999;
+   z-index: 9999;  /* Ensures it's above other content */
    align-items: center;
    justify-content: center;
    box-sizing: border-box;
@@ -452,6 +470,8 @@ label.form-label {
 .footer-item {
    margin-bottom: 0px;
    flex: 1;
+   margin: 0;
+   padding: 0;
    box-sizing: border-box;
 }
 
@@ -492,6 +512,8 @@ label.form-label {
 
 .footer-item .legal-links ul {
    list-style: none;
+   padding: 0;
+   margin: 0;
 }
 
 .footer-item .legal-links ul li {
@@ -529,6 +551,8 @@ label.form-label {
 /* Social Media (last 3 columns) */
 .footer-item.social-media ul {
    list-style: none;
+   padding: 0;
+   margin: 0;
 }
 
 .footer-item.social-media ul li {
@@ -547,13 +571,13 @@ label.form-label {
 
 .footer-item.social-media {
    display: flex;
-   justify-content: right;
-   align-items: center;
-   height: 100%;
+   justify-content: right;  /* Centers items horizontally */
+   align-items: center;      /* Centers items vertically */
+   height: 100%;             /* Ensures it takes full height of its container */
 }
 
 .footer-item.social-media a {
-   margin: 0 5px;
+   margin: 0 5px;           /* Adds spacing between the icons */
 }
 
 /* Flexbox Layout for Responsive Design */
@@ -564,18 +588,18 @@ label.form-label {
    }
    
    .footer-item {
-       width: 100%;
+       width: 100%; /* Make each section full width on small screens */
    }
 
    .footer-item .legal-links ul li {
-       margin-right: 20px;
+       margin-right: 20px; /* Add space between links */
    }
 }
 
 /* Responsive Layout for Footer Links */
 @media (max-width: 576px) {
    .footer-item .legal-links ul li {
-       margin-bottom: 15px;
+       margin-bottom: 15px; /* More space between legal links */
    }
    
    .footer-item.social-media ul {
@@ -590,17 +614,17 @@ label.form-label {
 
 /* CSS for adding a border between the Contact Us and Follow Us sections */
 .footer-item {
-   position: relative;
+   position: relative; /* Ensures any positioning works inside */
  }
  
  .footer-item.contact-info {
-   border-left: 2px solid #fff;
-   padding-left: 25px; 
+   border-left: 2px solid #fff; /* Adds a vertical line between Follow Us and Contact Us */
+   padding-left: 25px; /* Adds some space after the border */
  }
  
  .footer-item.social-media {
-   padding-right: 25px; 
-   text-align: right; 
+   padding-right: 25px; /* Adds some space on the right of the Follow Us section */
+   text-align: right; /* Aligns "Follow Us" text to the right */
  }
 
  .footer-item.copyright {
@@ -611,26 +635,40 @@ label.form-label {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
-   align-items: center;
+   align-items: center; /* Optionally aligns vertically */
 }
 
+.footer-item.copyright > div {
+   margin: 0;    /* Remove margin between the divs */
+   padding: 0;   /* Remove padding if necessary */
+}
+
+.footer-item.copyright .container-fluid {
+   padding: 0;  /* Remove any default padding */
+   margin: 0;   /* Remove margin */
+}
+
+.footer-item.copyright p {
+   margin: 0;    /* Remove margin around the paragraph */
+}
+ 
 /* Custom style to place the label to the left of the input field */
 .form-group {
-   display: flex;
-   align-items: center;
-   gap: 10px; 
+   display: flex;  /* Use flexbox to arrange label and input side by side */
+   align-items: center; /* Vertically align the label and input */
+   gap: 10px; /* Space between the label and input */
 }
 
 .form-label {
-   flex: 0 0 150px;
-   text-align: right; 
+   flex: 0 0 150px; /* Set the label width to a fixed size */
+   text-align: right; /* Align the label text to the right */
    display: block;
    text-align: left;
    margin-bottom: 0.5rem;
 }
 
 .input-group input {
-   flex: 1;
+   flex: 1; /* Make the input field take up the remaining space */
 }
 
 .input-group {
