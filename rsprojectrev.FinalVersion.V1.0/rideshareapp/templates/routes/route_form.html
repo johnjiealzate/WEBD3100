@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="addform">
+  
+  <!-- Flexbox container -->
+  <div class="container" id="route_form_container">
+
+    <!-- Left Box (form section) -->
+    <div class="container-fluid col-lg-6" id="hero-content_addform">
+      <h2 class="hero-title_addform">{{ form.instance.pk|yesno:"Edit Route,New route" }}</h2>
+      <h4 class="hero-subtitle_addform">Add your preferred route.</h4>
+
+      <form method="post">
+          {% csrf_token %}
+          <div class="row">
+              {% for field in form %}
+                  <div class="container-fluid col-12 mb-3" id="form">
+                      <label for="{{ field.id_for_label }}" class="form-label">
+                          {{ field.label }}
+                      </label>
+                      <div class="input-group">
+                          {{ field }}
+                      </div>
+                  </div>
+              {% endfor %}
+          </div>
+
+          <div class="row" id="add_new_route_btn_row">
+              <div class="col-8 text-center">
+                <button type="submit" class="save_route_btn">
+                  Save route
+                </button>
+              </div>
+          </div>
+      </form>
+    </div>
+
+    {% load static %}
+    <!-- Right Box (This box will move below on smaller screens) -->
+    <div class="container-fluid col-lg-6" id="right_box_div">
+      <!-- Right box content -->
+      <div>
+        <h5>Route preview:</h5>
+      </div>
+      <img src="{% static 'images/search.png' %}" alt="NRoutelogo" id="nroutelogo">
+      <div>
+        <a class="navbar-brand" href="">
+
+          <img src="{% static 'images/map.png' %}" alt="Map preview" id="mappreview">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.navbar-toggler').click(function(){
+            $('#addform').toggleClass('menu-open');
+        });
+    });
+</script>
+
+{% endblock %}
